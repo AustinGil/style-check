@@ -47,5 +47,6 @@ export default {
 .results__iframe {
 	flex-grow: 1;
 	border: 1px solid;
+	background-color: #fff;
 }
 </style>
