@@ -54,6 +54,7 @@ input {
 
 #app {
   height: 100vh;
+  background: lightgray;
 }
 
 .main {
