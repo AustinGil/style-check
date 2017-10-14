@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <main class="main">
+      <router-view/>
+    </main>
     <div class="credits">
       <p>&lt;/&gt; with 👓 by
         <a href="https://stegosource.com">Stegosource</a>
@@ -15,7 +17,21 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+#app,
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+#app {
+  height: 100vh;
+}
+
+.main {
+  flex-grow: 1;
+}
+
 .credits {
   text-align: center;
 }

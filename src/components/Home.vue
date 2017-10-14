@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="home">
 		<Styles></Styles>
 		<Results></Results>
 	</div>
@@ -18,5 +18,9 @@ export default {
 </script>
 
 <style>
-
+.home {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
 </style>
