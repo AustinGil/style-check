@@ -1,17 +1,17 @@
 <template>
 	<div>
-		<StylesAddNew></StylesAddNew>
+		<Styles></Styles>
 		<Results></Results>
 	</div>
 </template>
 
 <script>
-import StylesAddNew from './StylesAddNew'
+import Styles from './Styles'
 import Results from './Results'
 
 export default {
 	components: {
-		StylesAddNew,
+		Styles,
 		Results
 	}
 }
