@@ -18,6 +18,34 @@ export default {
 </script>
 
 <style lang="scss">
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 100%;
+}
+
 #app,
 .main {
   display: flex;

@@ -38,6 +38,7 @@ export default {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  padding: 10px;
 }
 
 .results__iframe {

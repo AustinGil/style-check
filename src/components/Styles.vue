@@ -45,5 +45,8 @@ export default {
 </script>
 
 <style>
-
+.styles {
+	max-width: 250px;
+	padding: 10px;
+}
 </style>
