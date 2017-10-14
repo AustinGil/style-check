@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HtmlElements from '@/components/HtmlElements'
+import Home from '@/components/Home'
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: HtmlElements
+      name: 'Home',
+      component: Home
     }
   ]
 })
