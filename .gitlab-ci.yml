@@ -8,7 +8,7 @@ image: node:7.10.0
 stages:
   # - test
   # - build
-  - deploy
+  # - deploy
 
 # TODO: Add unit tests
 # Run test scripts:
