@@ -5,17 +5,17 @@
 # You can specify a custom docker image from Docker Hub as your build environment.
 image: node:7.10.0
 
-stages: 
-  # - test
-  # - build
+# - test
+# - build
+stages:
   - deploy
 
 # TODO: Add unit tests
 # Run test scripts:
-  # stage: test
-  # script:
-  #   - npm install
-  #   - npm test
+# stage: test
+# script:
+#   - npm install
+#   - npm test
 
 # Publish to netlify:
   stage: deploy
