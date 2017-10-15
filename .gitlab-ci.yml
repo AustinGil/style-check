@@ -5,10 +5,10 @@
 # You can specify a custom docker image from Docker Hub as your build environment.
 image: node:7.10.0
 
-stages: ['test', 'build', 'deploy']
+stages: 
   # - test
   # - build
-  # - deploy
+  - deploy
 
 # TODO: Add unit tests
 # Run test scripts:
