@@ -9,8 +9,7 @@ export const store = new Vuex.Store({
 	},
 	mutations: {
 		addStylesheet(state, payload) {
-			console.log('Adding stylesheet', payload)
-			console.dir(state.stylesheets)
+			// console.log('Adding stylesheet', payload)
 			state.stylesheets.push(payload)
 		}
 	},

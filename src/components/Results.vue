@@ -1,6 +1,7 @@
 <template>
 	<div class="results">
 		<!-- <h3 class="results__title">Results</h3> -->
+		<!-- TODO: Look into making content editable -->
 		<iframe :src="src" class="results__iframe" frameborder="0">
 		</iframe>
 	</div>
@@ -46,7 +47,7 @@ export default {
 
 .results__iframe {
 	flex-grow: 1;
-	border: 1px solid;
+	border: 1px solid lightgrey;
 	background-color: #fff;
 }
 </style>

@@ -3,11 +3,6 @@
     <main class="main">
       <router-view/>
     </main>
-    <div class="credits">
-      <p>&lt;/&gt; with 👓 by
-        <a href="https://stegosource.com">Stegosource</a>
-      </p>
-    </div>
   </div>
 </template>
 
@@ -26,6 +21,7 @@ export default {
 
 body {
   line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1,
@@ -55,8 +51,7 @@ input {
 }
 
 #app {
-  height: 100vh;
-  background: lightgray;
+  min-height: 100vh;
 }
 
 .main {

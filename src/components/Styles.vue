@@ -1,7 +1,9 @@
 <template>
 	<div class="styles">
+		<h1>Styles Check</h1>
+		<p>A tool to help designers and developers see how their stylesheets render global HTML elements and make sure nothing was forgotten.</p>
 		<div class="styles__form">
-			<p>Add a stylesheet</p>
+			<p>Add your stylesheets below</p>
 			<form>
 				<label>URL
 					<input type="url" v-model="newStylesheet.url" placeholder="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" required>
@@ -12,11 +14,20 @@
 				<button type="submit" @click.prevent="fetchStylesheet">Add</button>
 			</form>
 		</div>
-		<ul class="styles__list">
-			<li v-for="(stylesheet, index) in stylesheets" :key="index" class="styles__list-item">
+		<ul class="styles__list" v-if="stylesheets.length">
+			<li v-for="(stylesheet, index) in stylesheets" :key="index" class="styles__style">
 				<a :href="stylesheet.url" target="_blank" rel="noopener">{{ stylesheet.name ? stylesheet.name : stylesheet.url }}</a>
+				<!-- TODO: Add ability to remove styles -->
+				<!-- <button class="styles__remove-style">X</button> -->
+
+				<!-- TODO: Add ability to reorder styles -->
 			</li>
 		</ul>
+		<div class="credits">
+			<p>&lt;/&gt; with 👓 by
+				<a href="https://stegosource.com">Stegosource</a>
+			</p>
+		</div>
 	</div>
 </template>
 
@@ -79,5 +90,9 @@ export default {
 .styles__list {
 	padding-left: 0;
 	list-style-type: none;
+}
+
+.styles__style {
+	margin-bottom: 15px;
 }
 </style>

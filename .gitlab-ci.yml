@@ -10,13 +10,14 @@ stages:
   - build
   - deploy
 
-Run test scripts:
+# TODO: Add unit tests
+# Run test scripts:
   # stage: test
   # script:
   #   - npm install
   #   - npm test
 
-Publish to netlify:
+# Publish to netlify:
   stage: deploy
   script:
     # Triggers a build trigger from netlify
