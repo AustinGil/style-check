@@ -5,17 +5,17 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
 	state: {
-		stylesheets: []
+		styles: [],
 	},
 	mutations: {
-		addStylesheet(state, payload) {
-			// console.log('Adding stylesheet', payload)
-			state.stylesheets.push(payload)
+		addStyle(state, payload) {
+			// console.log('Adding style', payload)
+			state.styles.push(payload)
 		}
 	},
 	actions: {
-		addStylesheet({ commit }, stylesheetObject) {
-			commit('addStylesheet', stylesheetObject)
+		addStyle({ commit }, styleObject) {
+			commit('addStyle', styleObject)
 		}
 	}
 });

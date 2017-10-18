@@ -5,24 +5,47 @@
 		<div class="styles__form">
 			<p>Add your stylesheets below</p>
 			<form>
-				<label>URL
-					<input type="url" v-model="newStylesheet.url" placeholder="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" required>
-				</label>
 				<label>Nickname (optional)
-					<input type="text" v-model="newStylesheet.name" placeholder="Bootstrap">
+					<input type="text" v-model="newStyle.name" placeholder="Bootstrap">
 				</label>
-				<button type="submit" @click.prevent="fetchStylesheet">Add</button>
+
+				Add From:
+				<div class="add-from">
+					<label>
+						<input type="radio" name="add-from" v-model="addFrom" value="url">URL
+					</label>
+					<label>
+						<input type="radio" name="add-from" v-model="addFrom" value="computer">Computer
+					</label>
+					<!-- <label> -->
+					<!-- <input type="radio" name="add-from" v-model="addFrom" value="inline">Inline -->
+					<!-- </label> -->
+				</div>
+
+				<label v-if="addFrom == 'url'">URL
+					<input type="url" v-model="newStyle.url" placeholder="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" required>
+				</label>
+				<label v-if="addFrom == 'computer'">File
+					<input type="file" @change="addFromComputer($event)">
+				</label>
+				<button type="submit" @click.prevent="addNewStyle">Add</button>
 			</form>
 		</div>
-		<ul class="styles__list" v-if="stylesheets.length">
-			<li v-for="(stylesheet, index) in stylesheets" :key="index" class="styles__style">
-				<a :href="stylesheet.url" target="_blank" rel="noopener">{{ stylesheet.name ? stylesheet.name : stylesheet.url }}</a>
+
+		<ul class="styles__list" v-if="styles.length">
+			<li v-for="(style, index) in styles" :key="index" class="styles__style">
+				<a :href="style.url" target="_blank" rel="noopener">{{ style.name ? style.name : style.url }}</a>
 				<!-- TODO: Add ability to remove styles -->
 				<!-- <button class="styles__remove-style">X</button> -->
 
 				<!-- TODO: Add ability to reorder styles -->
 			</li>
 		</ul>
+
+		<!-- <label>Custom Styles -->
+		<!-- <textarea></textarea> -->
+		<!-- </label> -->
+
 		<div class="credits">
 			<p>&lt;/&gt; with 👓 by
 				<a href="https://stegosource.com">Stegosource</a>
@@ -40,37 +63,64 @@ import axios from 'axios'
 export default {
 	data() {
 		return {
-			newStylesheet: {
+			newStyle: {
 				url: '',
-				name: ''
-			}
+				name: '',
+				type: '',
+				size: null
+			},
+			addFrom: 'url'
 		}
 	},
 	computed: {
 		...mapState([
-			'stylesheets'
+			'styles'
 		])
 	},
 	methods: {
 		...mapActions([
-			'addStylesheet'
+			'addStyle'
 		]),
-		fetchStylesheet(url) {
-			// TODO: Add validation to form input. required, isUrl.
-			if (this.newStylesheet.url) {
-				const tempUrl = 'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css';
-				const vm = this
+		addNewStyle() {
+			const url = this.newStyle.url || false
 
-				axios.get(tempUrl)
-					.then(function(response) {
-						// console.log(response.data);
-						vm.addStylesheet(vm.newStylesheet)
-						vm.newStylesheet = {}
-					})
-					.catch(function(error) {
-						console.log(error);
-					});
+			if (!url) {
+				// TODO: You need a URL!!!
+				return
 			}
+
+			const vm = this
+
+			axios.get(url)
+				.then(function(response) {
+					// console.log(response.data);
+					vm.addStyle(vm.newStyle)
+					vm.newStyle = {}
+				})
+				.catch(function(error) {
+					console.log(error);
+				});
+		},
+		addFromComputer(e) {
+			// https://www.quora.com/How-do-I-read-and-parse-a-local-file-in-Javascript-jquery-without-using-HTML-file-input-or-drag-and-drop
+
+			const selectedFile = e.target.files[0] || false;
+
+			if (!selectedFile) {
+				return
+			}
+
+			const newStyle = {
+				url: window.URL.createObjectURL(selectedFile),
+				name: selectedFile.name
+			}
+
+			const reader = new FileReader();
+			reader.onload = function() {
+				var dataURL = reader.result;
+				console.log(dataURL);
+			};
+			console.log(reader.readAsText(selectedFile))
 		}
 	}
 }
@@ -85,6 +135,11 @@ export default {
 
 .styles__form {
 	margin-bottom: 20px;
+}
+
+.add-from {
+	display: flex;
+	justify-content: space-between;
 }
 
 .styles__list {

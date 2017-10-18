@@ -1,7 +1,7 @@
 <template>
 	<div class="results">
 		<!-- <h3 class="results__title">Results</h3> -->
-		<!-- TODO: Look into making content editable -->
+		<!-- TODO: Look into making content editable https://developer.mozilla.org/en-US/docs/Web/API/Document/designMode -->
 		<iframe :src="src" class="results__iframe" frameborder="0">
 		</iframe>
 	</div>
@@ -14,12 +14,12 @@ import html from './html/all'
 export default {
 	computed: {
 		...mapState([
-			'stylesheets'
+			'styles'
 		]),
 		src() {
 			let stylesheetLinks = '';
 
-			this.stylesheets.forEach(stylesheet => {
+			this.styles.forEach(stylesheet => {
 				stylesheetLinks += `<link rel="stylesheet" href="${stylesheet.url}">`;
 			});
 

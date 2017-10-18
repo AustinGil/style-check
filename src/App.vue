@@ -40,8 +40,14 @@ label {
   display: block;
 }
 
-input {
+input,
+select,
+textarea {
   width: 100%;
+}
+
+input[type="radio"] {
+  width: auto;
 }
 
 #app,
