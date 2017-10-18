@@ -44,10 +44,12 @@ input,
 select,
 textarea {
   width: 100%;
+  margin-bottom: 15px;
 }
 
 input[type="radio"] {
   width: auto;
+  margin-right: 5px;
 }
 
 #app,

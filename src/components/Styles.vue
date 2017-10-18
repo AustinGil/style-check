@@ -3,12 +3,7 @@
 		<h1>Styles Check</h1>
 		<p>A tool to help designers and developers see how their stylesheets render global HTML elements and make sure nothing was forgotten.</p>
 		<div class="styles__form">
-			<p>Add your stylesheets below</p>
 			<form>
-				<label>Nickname (optional)
-					<input type="text" v-model="newStyle.name" placeholder="Bootstrap">
-				</label>
-
 				Add From:
 				<div class="add-from">
 					<label>
@@ -22,13 +17,25 @@
 					<!-- </label> -->
 				</div>
 
+				<!-- Maybe include a quick add feature -->
+
 				<label v-if="addFrom == 'url'">URL
 					<input type="url" v-model="newStyle.url" placeholder="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" required>
 				</label>
+
 				<label v-if="addFrom == 'computer'">File
 					<input type="file" @change="addFromComputer($event)">
 				</label>
-				<button type="submit" @click.prevent="addNewStyle">Add</button>
+
+				<!-- <label>Custom -->
+				<!-- <textarea placeholder="body { ... }"></textarea> -->
+				<!-- </label> -->
+
+				<label>Nickname (optional)
+					<input type="text" v-model="newStyle.name" placeholder="Bootstrap">
+				</label>
+
+				<button type="submit" @click.prevent="addNewStyle">Add Styles</button>
 			</form>
 		</div>
 
@@ -42,10 +49,6 @@
 			</li>
 		</ul>
 
-		<!-- <label>Custom Styles -->
-		<!-- <textarea></textarea> -->
-		<!-- </label> -->
-
 		<div class="credits">
 			<p>&lt;/&gt; with 👓 by
 				<a href="https://stegosource.com">Stegosource</a>
@@ -54,20 +57,22 @@
 	</div>
 </template>
 
-<script>
+<script type="ts">
 import { mapState } from 'vuex'
 import { mapActions } from 'vuex'
 import axios from 'axios'
 // TODO: Look into https://codemirror.net/
 
+// TODO: Add TypeScript functionality
 export default {
 	data() {
 		return {
 			newStyle: {
 				url: '',
-				name: '',
-				type: '',
-				size: null
+				fileName: '',
+				fileType: '',
+				size: null,
+				nickName: ''
 			},
 			addFrom: 'url'
 		}
@@ -81,6 +86,9 @@ export default {
 		...mapActions([
 			'addStyle'
 		]),
+		getFileName(filePath) {
+			return filePath;
+		},
 		addNewStyle() {
 			const url = this.newStyle.url || false
 
@@ -90,6 +98,17 @@ export default {
 			}
 
 			const vm = this
+			const newStyleObject = {
+				url: this.newStyle.url,
+				fileName: this.newStyle.url,
+				fileType: '',
+				size: null,
+				nickName: ''
+			}
+
+			// Nick
+			// nickneux21@gmail.com
+			// betterview.net
 
 			axios.get(url)
 				.then(function(response) {
