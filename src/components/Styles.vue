@@ -74,6 +74,11 @@ export default {
 			addFrom: 'url'
 		}
 	},
+	watch: {
+		addFrom() {
+			this.clearForm();
+		}
+	},
 	computed: {
 		...mapState([
 			'styles'
@@ -83,6 +88,9 @@ export default {
 		...mapActions([
 			'addStyle'
 		]),
+		clearForm() {
+			this.newStyle = {}
+		},
 		getFileNameFromPath(path) {
 			const lastSlashIndex = path.lastIndexOf('/');
 			if (!lastSlashIndex) {
@@ -106,7 +114,7 @@ export default {
 				.then(function(response) {
 					console.log(response);
 					vm.addStyle(vm.newStyle)
-					vm.newStyle = {}
+					vm.clearForm();
 				})
 				.catch(function(error) {
 					console.log(error);
