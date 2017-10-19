@@ -32,16 +32,16 @@
 				<!-- </label> -->
 
 				<label>Nickname (optional)
-					<input type="text" v-model="newStyle.name" placeholder="Bootstrap">
+					<input type="text" v-model="newStyle.nickName" placeholder="Bootstrap">
 				</label>
 
-				<button type="submit" @click.prevent="addNewStyle">Add Styles</button>
+				<button type="submit" @click.prevent="commitNewStyle">Add Styles</button>
 			</form>
 		</div>
 
 		<ul class="styles__list" v-if="styles.length">
 			<li v-for="(style, index) in styles" :key="index" class="styles__style">
-				<a :href="style.url" target="_blank" rel="noopener">{{ style.name ? style.name : style.url }}</a>
+				<a :href="style.url" target="_blank" rel="noopener">{{ style.fileName ? style.fileName : style.url }}</a>
 				<!-- TODO: Add ability to remove styles -->
 				<!-- <button class="styles__remove-style">X</button> -->
 
@@ -69,9 +69,6 @@ export default {
 		return {
 			newStyle: {
 				url: '',
-				fileName: '',
-				fileType: '',
-				size: null,
 				nickName: ''
 			},
 			addFrom: 'url'
@@ -86,33 +83,28 @@ export default {
 		...mapActions([
 			'addStyle'
 		]),
-		getFileName(filePath) {
-			return filePath;
+		getFileNameFromPath(path) {
+			const lastSlashIndex = path.lastIndexOf('/');
+			if (!lastSlashIndex) {
+				return path;
+			}
+			return path.slice(lastSlashIndex + 1);
 		},
-		addNewStyle() {
-			const url = this.newStyle.url || false
-
+		commitNewStyle() {
+			const url = this.newStyle.url;
 			if (!url) {
 				// TODO: You need a URL!!!
 				return
 			}
 
-			const vm = this
-			const newStyleObject = {
-				url: this.newStyle.url,
-				fileName: this.newStyle.url,
-				fileType: '',
-				size: null,
-				nickName: ''
-			}
+			this.newStyle.fileName = this.getFileNameFromPath(url);
 
-			// Nick
-			// nickneux21@gmail.com
-			// betterview.net
+			console.log(this.newStyle)
+			const vm = this
 
 			axios.get(url)
 				.then(function(response) {
-					// console.log(response.data);
+					console.log(response);
 					vm.addStyle(vm.newStyle)
 					vm.newStyle = {}
 				})
@@ -129,10 +121,18 @@ export default {
 				return
 			}
 
-			const newStyle = {
-				url: window.URL.createObjectURL(selectedFile),
-				name: selectedFile.name
-			}
+			// const newStyle = {
+			// 	url: window.URL.createObjectURL(selectedFile),
+			// 	name: selectedFile.name
+			// }
+
+			// https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+			// http://www.javascripture.com/FileReader
+			// http://blog.teamtreehouse.com/reading-files-using-the-html5-filereader-api
+			// https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications
+			// https://developer.mozilla.org/en-US/docs/Web/API/Blob
+			// https://developer.mozilla.org/en-US/docs/Web/API/File
+			// https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
 
 			const reader = new FileReader();
 			reader.onload = function() {
