@@ -24,7 +24,7 @@
 				</label>
 
 				<label v-if="addFrom == 'computer'">File
-					<input type="file" @change="addFromComputer($event)">
+					<input type="file" @change="getStyleFromComputer($event)">
 				</label>
 
 				<!-- <label>Custom -->
@@ -35,13 +35,13 @@
 					<input type="text" v-model="newStyle.nickName" placeholder="Bootstrap">
 				</label>
 
-				<button type="submit" @click.prevent="commitNewStyle">Add Styles</button>
+				<button type="submit" @click.prevent="submitForm($event)">Add Styles</button>
 			</form>
 		</div>
 
 		<ul class="styles__list" v-if="styles.length">
 			<li v-for="(style, index) in styles" :key="index" class="styles__style">
-				<a :href="style.url" target="_blank" rel="noopener">{{ style.fileName ? style.fileName : style.url }}</a>
+				<a :href="style.url" target="_blank" rel="noopener">{{ style.nickName ? style.nickName : style.fileName }}</a>
 				<!-- TODO: Add ability to remove styles -->
 				<!-- <button class="styles__remove-style">X</button> -->
 
@@ -58,123 +58,142 @@
 </template>
 
 <script type="ts">
-import { mapState } from 'vuex'
-import { mapActions } from 'vuex'
-import axios from 'axios'
+import { mapState } from "vuex";
+import { mapActions } from "vuex";
+import axios from "axios";
 // TODO: Look into https://codemirror.net/
 
 // TODO: Add TypeScript functionality
 export default {
-	data() {
-		return {
-			newStyle: {
-				url: '',
-				nickName: ''
-			},
-			addFrom: 'url'
-		}
-	},
-	watch: {
-		addFrom() {
-			this.clearForm();
-		}
-	},
-	computed: {
-		...mapState([
-			'styles'
-		])
-	},
-	methods: {
-		...mapActions([
-			'addStyle'
-		]),
-		clearForm() {
-			this.newStyle = {}
-		},
-		getFileNameFromPath(path) {
-			const lastSlashIndex = path.lastIndexOf('/');
-			if (!lastSlashIndex) {
-				return path;
-			}
-			return path.slice(lastSlashIndex + 1);
-		},
-		commitNewStyle() {
-			const url = this.newStyle.url;
-			if (!url) {
-				// TODO: You need a URL!!!
-				return
-			}
+  data() {
+    return {
+      newStyle: {
+        url: "",
+        nickName: ""
+      },
+      inputs: {
+        url: "",
+        nickName: "",
+        upload: null
+      },
+      addFrom: "url"
+    };
+  },
+  watch: {
+    addFrom() {
+      this.clearForm();
+    }
+  },
+  computed: {
+    ...mapState(["styles"])
+  },
+  methods: {
+    ...mapActions(["commitStyle"]),
 
-			this.newStyle.fileName = this.getFileNameFromPath(url);
+    clearForm() {
+      this.newStyle = {};
+    },
 
-			console.log(this.newStyle)
-			const vm = this
+    getFileNameFromPath(path) {
+      const lastSlashIndex = path.lastIndexOf("/");
+      if (!lastSlashIndex) {
+        return path;
+      }
+      return path.slice(lastSlashIndex + 1);
+    },
 
-			axios.get(url)
-				.then(function(response) {
-					console.log(response);
-					vm.addStyle(vm.newStyle)
-					vm.clearForm();
-				})
-				.catch(function(error) {
-					console.log(error);
-				});
-		},
-		addFromComputer(e) {
-			// https://www.quora.com/How-do-I-read-and-parse-a-local-file-in-Javascript-jquery-without-using-HTML-file-input-or-drag-and-drop
+    getStyleFromUrl(url) {
+      if (!url) {
+        // TODO: You need a URL!!!
+        alert("Please add a URL");
+        throw Error("Missing URL");
+        return;
+      }
 
-			const selectedFile = e.target.files[0] || false;
+      // TODO: make sure file exists
+      this.newStyle.fileName = this.getFileNameFromPath(url);
+      return this.newStyle;
+    },
 
-			if (!selectedFile) {
-				return
-			}
+    getStyleFromComputer(event) {
+      const selectedFile = event.target.files[0] || false;
 
-			// const newStyle = {
-			// 	url: window.URL.createObjectURL(selectedFile),
-			// 	name: selectedFile.name
-			// }
+      if (!selectedFile) {
+        return;
+      }
 
-			// https://developer.mozilla.org/en-US/docs/Web/API/FileReader
-			// http://www.javascripture.com/FileReader
-			// http://blog.teamtreehouse.com/reading-files-using-the-html5-filereader-api
-			// https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications
-			// https://developer.mozilla.org/en-US/docs/Web/API/Blob
-			// https://developer.mozilla.org/en-US/docs/Web/API/File
-			// https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
+      const vm = this;
+      const newStyle = {
+        fileName: selectedFile.name
+      };
+      // fileSize: selectedFile.size
 
-			const reader = new FileReader();
-			reader.onload = function() {
-				var dataURL = reader.result;
-				console.log(dataURL);
-			};
-			console.log(reader.readAsText(selectedFile))
-		}
-	}
-}
+      // https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+      // http://www.javascripture.com/FileReader
+      // http://blog.teamtreehouse.com/reading-files-using-the-html5-filereader-api
+      // https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications
+      // https://developer.mozilla.org/en-US/docs/Web/API/Blob
+      // https://developer.mozilla.org/en-US/docs/Web/API/File
+      // https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
+
+      const reader = new FileReader();
+      reader.onload = function() {
+        // When the reader fires, we do stuff here.
+        var fileContents = reader.result;
+
+        if (fileContents) {
+          newStyle.contents = fileContents;
+
+          Object.assign(vm.newStyle, newStyle);
+        }
+      };
+      // Fire the reader.
+      reader.readAsText(selectedFile);
+    },
+
+    async submitForm(event) {
+      // console.dir(event.target);
+      let newStyle;
+
+      switch (this.addFrom) {
+        case "url":
+          newStyle = await this.getStyleFromUrl(this.newStyle.url);
+          break;
+
+        case "computer":
+          newStyle = this.newStyle;
+          break;
+      }
+
+      this.commitStyle(newStyle);
+      this.clearForm();
+    }
+  }
+};
 </script>
 
 <style>
 .styles {
-	max-width: 250px;
-	padding: 10px;
-	word-wrap: break-word;
+  max-width: 250px;
+  padding: 10px;
+  word-wrap: break-word;
 }
 
 .styles__form {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .add-from {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .styles__list {
-	padding-left: 0;
-	list-style-type: none;
+  padding-left: 0;
+  list-style-type: none;
 }
 
 .styles__style {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 </style>

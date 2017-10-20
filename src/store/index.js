@@ -14,7 +14,7 @@ export const store = new Vuex.Store({
 		}
 	},
 	actions: {
-		addStyle({ commit }, styleObject) {
+		commitStyle({ commit }, styleObject) {
 			commit('addStyle', styleObject)
 		}
 	}
