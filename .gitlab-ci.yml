@@ -17,7 +17,7 @@ stages:
 #   - npm install
 #   - npm test
 
-# Publish to netlify:
+Publish to netlify:
   stage: deploy
   script:
     # Triggers a build trigger from netlify
