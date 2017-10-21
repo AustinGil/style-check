@@ -43,6 +43,8 @@ export default {
 }
 
 .styles__style-link {
+  display: flex;
+  align-items: center;
   margin-right: 5px;
 }
 </style>
