@@ -1,25 +1,32 @@
 <template>
 	<div class="home">
-		<Styles></Styles>
+		<Sidebar>
+			<Styles></Styles>
+			<StylesList></StylesList>
+		</Sidebar>
 		<Results></Results>
 	</div>
 </template>
 
 <script>
-import Styles from './Styles'
-import Results from './Results'
+import Sidebar from "./Sidebar";
+import Styles from "./Styles";
+import StylesList from "./StylesList";
+import Results from "./Results";
 
 export default {
-	components: {
-		Styles,
-		Results
-	}
-}
+  components: {
+    Sidebar,
+    Styles,
+    StylesList,
+    Results
+  }
+};
 </script>
 
 <style>
 .home {
-	display: flex;
-	flex-grow: 1;
+  display: flex;
+  flex-grow: 1;
 }
 </style>

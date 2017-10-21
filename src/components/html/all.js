@@ -10,18 +10,22 @@ export default `
 		<em>Here it is italic.
 			<strong>Here it is with both. </strong>
 		</em>
-		<a href="#">This is a link.</a>
+		<a href="#">Here is a link.</a>
+		<br>
+		Here's another line to test line height.
 	</h1>
+	<p>This line shows the margin between the previous heading and the next paragraph.</p>
 	
 	<h2>This is an &lt;h2&gt; tag.
 		<strong>Here it is bold.</strong>
 		<em>Here it is italic.
 			<strong>Here it is with both. </strong>
 		</em>
-		<a href="#">This is a link</a>
-		<em><br>
-		</em>
+		<a href="#">Here is a link</a>
+		<br>
+		Here's another line to test line height.
 	</h2>
+	<p>This line shows the margin between the previous heading and the next paragraph.</p>
 	
 	<h3>This is an &lt;h3&gt; tag.
 		<strong>Here it is bold.</strong>
@@ -30,37 +34,41 @@ export default `
 		</em>
 		<strong>
 			<em> both</em>.</strong>
-		<a href="#">This is a link</a>
-		<em><br>
-		</em>
+		<a href="#">Here is a link</a>
+		<br>
+		Here's another line to test line height.
 	</h3>
+	<p>This line shows the margin between the previous heading and the next paragraph.</p>
 	
 	<h4>This is an &lt;h4&gt; tag.
 		<strong>Here it is bold.</strong>
 		<em>Here it is italic.
 			<strong>Here it is with both</strong>.</em>
-		<a href="#">This is a link</a>
-		<em><br>
-		</em>
+		<a href="#">Here is a link</a>
+		<br>
+		Here's another line to test line height.
 	</h4>
+	<p>This line shows the margin between the previous heading and the next paragraph.</p>
 	
 	<h5>This is an &lt;h5&gt; tag.
 		<strong>Here it is bold.</strong>
 		<em>Here it is italic.
 			<strong>Here it is with both</strong>.</em>
-		<a href="#">This is a link</a>
-		<em><br>
-		</em>
+		<a href="#">Here is a link</a>
+		<br>
+		Here's another line to test line height.
 	</h5>
+	<p>This line shows the margin between the previous heading and the next paragraph.</p>
 	
 	<h6>This is an &lt;h6&gt; tag.
 		<strong>Here it is bold.</strong>
 		<em>Here it is italic.
 			<strong>Here it is with both</strong>.</em>
-		<a href="#">This is a link</a>
-		<em><br>
-		</em>
+		<a href="#">Here is a link</a>
+		<br>
+		Here's another line to test line height.
 	</h6>
+	<p>This line shows the margin between the previous heading and the next paragraph.</p>
 	
 </div>
 <!-- Headings -->
@@ -78,7 +86,7 @@ export default `
 				<strong>Here it is with both.</strong>
 			</em>
 		</em>
-		<a href="#">This is a link.</a>
+		<a href="#">Here is a link.</a>
 	</p>
 	<p>
 		<strong>This content is left justified</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</p>

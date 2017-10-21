@@ -1,69 +1,47 @@
 <template>
-	<div class="styles">
-		<h1>Styles Check</h1>
-		<p>A tool to help designers and developers see how their stylesheets render global HTML elements and make sure nothing was forgotten.</p>
-		<div class="styles__form">
-			<form>
-				Add From:
-				<div class="add-from">
-					<label>
-						<input type="radio" name="add-from" v-model="addFrom" value="url">URL
-					</label>
-					<label>
-						<input type="radio" name="add-from" v-model="addFrom" value="computer">Computer
-					</label>
-					<!-- <label> -->
-					<!-- <input type="radio" name="add-from" v-model="addFrom" value="inline">Inline -->
-					<!-- </label> -->
-				</div>
+  <form class="add-style" @submit.prevent="submitForm($event)">
+    
+    Add Styles From:
+    <div class="add-style__from">
+      <label>
+        <input type="radio" name="add-from" v-model="addFrom" @change="clearForm" value="url">URL
+      </label>
+      <label>
+        <input type="radio" name="add-from" v-model="addFrom" @change="clearForm" value="computer">Computer
+      </label>
+      <!-- <label> -->
+      <!-- <input type="radio" name="add-from" v-model="addFrom" value="inline">Inline -->
+      <!-- </label> -->
+    </div>
 
-				<!-- Maybe include a quick add feature -->
+    <!-- Maybe include a quick add feature -->
 
-				<label v-if="addFrom == 'url'">URL
-					<input type="url" v-model="newStyle.url" placeholder="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" required>
-				</label>
+    <label v-if="addFrom == 'url'">URL
+      <input type="url" v-model="newStyle.url" placeholder="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" required>
+    </label>
 
-				<label v-if="addFrom == 'computer'">File
-					<input type="file" @change="getStyleFromComputer($event)">
-				</label>
+    <label v-if="addFrom == 'computer'">File
+      <input type="file" @change="getStyleFromComputer($event)">
+    </label>
 
-				<!-- <label>Custom -->
-				<!-- <textarea placeholder="body { ... }"></textarea> -->
-				<!-- </label> -->
+    <!-- <label>Custom -->
+    <!-- <textarea placeholder="body { ... }"></textarea> -->
+    <!-- </label> -->
 
-				<label>Nickname (optional)
-					<input type="text" v-model="newStyle.nickName" placeholder="Bootstrap">
-				</label>
+    <label>Nickname (optional)
+      <input type="text" v-model="newStyle.nickName" placeholder="Bootstrap">
+    </label>
 
-				<button type="submit" @click.prevent="submitForm($event)">Add Styles</button>
-			</form>
-		</div>
-
-		<ul class="styles__list" v-if="styles.length">
-			<li v-for="(style, index) in styles" :key="index" class="styles__style">
-				<a :href="style.url" target="_blank" rel="noopener">{{ style.nickName ? style.nickName : style.fileName }}</a>
-				<!-- TODO: Add ability to remove styles -->
-				<!-- <button class="styles__remove-style">X</button> -->
-
-				<!-- TODO: Add ability to reorder styles -->
-			</li>
-		</ul>
-
-		<div class="credits">
-			<p>&lt;/&gt; with 👓 by
-				<a href="https://stegosource.com">Stegosource</a>
-			</p>
-		</div>
-	</div>
+    <button type="submit">Add Styles</button>
+  </form>
 </template>
 
 <script type="ts">
-import { mapState } from "vuex";
 import { mapActions } from "vuex";
 import axios from "axios";
 // TODO: Look into https://codemirror.net/
-
 // TODO: Add TypeScript functionality
+
 export default {
   data() {
     return {
@@ -78,14 +56,6 @@ export default {
       },
       addFrom: "url"
     };
-  },
-  watch: {
-    addFrom() {
-      this.clearForm();
-    }
-  },
-  computed: {
-    ...mapState(["styles"])
   },
   methods: {
     ...mapActions(["commitStyle"]),
@@ -167,33 +137,19 @@ export default {
 
       this.commitStyle(newStyle);
       this.clearForm();
+      // event.target.reset();
     }
   }
 };
 </script>
 
 <style>
-.styles {
-  max-width: 250px;
-  padding: 10px;
-  word-wrap: break-word;
-}
-
-.styles__form {
+.add-style {
   margin-bottom: 20px;
 }
 
-.add-from {
+.add-style__from {
   display: flex;
   justify-content: space-between;
-}
-
-.styles__list {
-  padding-left: 0;
-  list-style-type: none;
-}
-
-.styles__style {
-  margin-bottom: 15px;
 }
 </style>
