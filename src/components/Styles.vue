@@ -22,6 +22,10 @@
 
     <label v-if="addFrom == 'computer'">File
       <input type="file" @change="getStyleFromComputer($event)">
+      <div class="file-input">
+        <span class="file-input__btn" tabindex="0">Upload</span>
+        <span class="file-input__file-name">{{newStyle.fileName ? newStyle.fileName : ''}}</span>
+      </div>
     </label>
 
     <!-- <label>Custom -->
@@ -37,6 +41,7 @@
 </template>
 
 <script type="ts">
+import Vue from "vue";
 import { mapActions } from "vuex";
 import axios from "axios";
 // TODO: Look into https://codemirror.net/
@@ -112,9 +117,10 @@ export default {
         var fileContents = reader.result;
 
         if (fileContents) {
-          newStyle.contents = fileContents;
-
-          Object.assign(vm.newStyle, newStyle);
+          Vue.set(vm.newStyle, "fileName", selectedFile.name);
+          Vue.set(vm.newStyle, "contents", fileContents);
+          // vm.newStyle.fileName = ;
+          // vm.newStyle.contents = fileContents;
         }
       };
       // Fire the reader.
@@ -135,9 +141,12 @@ export default {
           break;
       }
 
-      this.addStyle(newStyle);
-      this.clearForm();
-      // event.target.reset();
+      if (newStyle.url || newStyle.contents) {
+        this.addStyle(newStyle);
+        this.clearForm();
+      } else {
+        throw Error("That style looks a bit funny...");
+      }
     }
   }
 };

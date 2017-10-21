@@ -1,7 +1,7 @@
 <template>
 	<div class="sidebar">
 		<h1>Styles Check</h1>
-		<p>Check how styles render global HTML elements and make sure nothing gets left behind.</p>
+		<p>See how your styles render global HTML elements and make sure nothing gets left behind.</p>
 
 		<slot></slot>
 
@@ -17,12 +17,16 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss">
 .sidebar {
   display: flex;
   flex-direction: column;
   max-width: 250px;
   padding: 10px;
   word-wrap: break-word;
+
+  a {
+    color: #fff;
+  }
 }
 </style>

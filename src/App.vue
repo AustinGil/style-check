@@ -40,6 +40,10 @@ ol {
 }
 
 button {
+  // border: none;
+  border-radius: 5px;
+  padding: 5px;
+  background: #fff;
   cursor: pointer;
 }
 
@@ -52,11 +56,26 @@ select,
 textarea {
   width: 100%;
   margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 input[type="radio"] {
   width: auto;
   margin-right: 5px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-input__btn {
+  @extend button;
+  display: inline-block;
+  margin-bottom: 15px;
+  line-height: 1.15;
+  color: black;
 }
 
 #app,
@@ -67,6 +86,8 @@ input[type="radio"] {
 
 #app {
   min-height: 100vh;
+  color: #fff;
+  background-color: #0c6980;
 }
 
 .main {
