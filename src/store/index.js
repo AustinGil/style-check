@@ -11,11 +11,17 @@ export const store = new Vuex.Store({
 		addStyle(state, payload) {
 			// console.log('Adding style', payload)
 			state.styles.push(payload)
+		},
+		removeStyle(state, index) {
+			state.styles.splice(index, 1);
 		}
 	},
 	actions: {
-		commitStyle({ commit }, styleObject) {
+		addStyle({ commit }, styleObject) {
 			commit('addStyle', styleObject)
+		},
+		removeStyle({ commit }, styleIndex) {
+			commit('removeStyle', styleIndex)
 		}
 	}
 });

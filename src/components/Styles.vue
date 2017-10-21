@@ -58,7 +58,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["commitStyle"]),
+    ...mapActions(["addStyle"]),
 
     clearForm() {
       this.newStyle = {};
@@ -135,7 +135,7 @@ export default {
           break;
       }
 
-      this.commitStyle(newStyle);
+      this.addStyle(newStyle);
       this.clearForm();
       // event.target.reset();
     }

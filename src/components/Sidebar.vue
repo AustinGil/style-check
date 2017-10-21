@@ -19,6 +19,8 @@ export default {};
 
 <style>
 .sidebar {
+  display: flex;
+  flex-direction: column;
   max-width: 250px;
   padding: 10px;
   word-wrap: break-word;

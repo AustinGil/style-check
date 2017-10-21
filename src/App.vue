@@ -8,8 +8,8 @@
 
 <script>
 export default {
-  name: 'app'
-}
+  name: "app"
+};
 </script>
 
 <style lang="scss">
@@ -34,6 +34,13 @@ p,
 ul,
 ol {
   margin-top: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+button {
+  cursor: pointer;
 }
 
 label {
