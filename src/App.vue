@@ -33,7 +33,7 @@ h6,
 p,
 ul,
 ol {
-  margin-top: 0 !important;
+  margin-top: 0;
   &:last-child {
     margin-bottom: 0;
   }
