@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import Sidebar from "./Sidebar";
-import Styles from "./Styles";
-import StylesList from "./StylesList";
-import Results from "./Results";
+import Sidebar from "./Sidebar.vue";
+import Styles from "./Styles.vue";
+import StylesList from "./StylesList.vue";
+import Results from "./Results.vue";
 
 export default {
   components: {

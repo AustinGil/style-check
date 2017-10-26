@@ -40,14 +40,15 @@
   </form>
 </template>
 
-<script type="ts">
+<script>
+// <script lang="ts">
 import Vue from "vue";
 import { mapActions } from "vuex";
 import axios from "axios";
 // TODO: Look into https://codemirror.net/
 // TODO: Add TypeScript functionality
 
-export default {
+export default Vue.extend({
   data() {
     return {
       newStyle: {
@@ -149,7 +150,7 @@ export default {
       }
     }
   }
-};
+});
 </script>
 
 <style>
