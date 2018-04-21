@@ -1,30 +1,30 @@
 <template>
-	<div class="results">
-		<!-- <h3 class="results__title">Results</h3> -->
-		<!-- TODO: Look into making content editable https://developer.mozilla.org/en-US/docs/Web/API/Document/designMode -->
-		<iframe :src="src" class="results__iframe" frameborder="0">
-		</iframe>
-	</div>
+  <div class="results">
+    <!-- <h3 class="results__title">Results</h3> -->
+    <!-- TODO: Look into making content editable https://developer.mozilla.org/en-US/docs/Web/API/Document/designMode -->
+    <iframe :src="src" class="results__iframe" frameborder="0">
+    </iframe>
+  </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
-import html from "./html/all";
+import { mapState } from "vuex"
+import html from "./html/all"
 
 export default {
   computed: {
     ...mapState(["styles"]),
     src() {
-      let stylesheets = "";
-      let inlineStyles = "";
+      let stylesheets = ""
+      let inlineStyles = ""
 
       this.styles.forEach(style => {
         if (style.url) {
-          stylesheets += `<link rel="stylesheet" href="${style.url}">`;
+          stylesheets += `<link rel="stylesheet" href="${style.url}">`
         } else if (style.contents) {
-          inlineStyles += `<style>${style.contents}</style>`;
+          inlineStyles += `<style>${style.contents}</style>`
         }
-      });
+      })
 
       return (
         "data:text/html;charset=utf-8," +
@@ -35,10 +35,10 @@ export default {
 					${html}
 				</body>`
         )
-      );
+      )
     }
   }
-};
+}
 </script>
 
 <style>

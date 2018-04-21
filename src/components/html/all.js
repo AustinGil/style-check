@@ -10,23 +10,23 @@ export default `
 		<em>Here it is italic.
 			<strong>Here it is with both. </strong>
 		</em>
-		<a href="#">Here is a link.</a>
+		<a href="/">Here is a link.</a>
 		<br>
 		Here's another line to test line height.
 	</h1>
 	<p>This line shows the margin between the previous heading and the next paragraph.</p>
-	
+
 	<h2>This is an &lt;h2&gt; tag.
 		<strong>Here it is bold.</strong>
 		<em>Here it is italic.
 			<strong>Here it is with both. </strong>
 		</em>
-		<a href="#">Here is a link</a>
+		<a href="/">Here is a link</a>
 		<br>
 		Here's another line to test line height.
 	</h2>
 	<p>This line shows the margin between the previous heading and the next paragraph.</p>
-	
+
 	<h3>This is an &lt;h3&gt; tag.
 		<strong>Here it is bold.</strong>
 		<em>Here it is italic.
@@ -34,42 +34,42 @@ export default `
 		</em>
 		<strong>
 			<em> both</em>.</strong>
-		<a href="#">Here is a link</a>
+		<a href="/">Here is a link</a>
 		<br>
 		Here's another line to test line height.
 	</h3>
 	<p>This line shows the margin between the previous heading and the next paragraph.</p>
-	
+
 	<h4>This is an &lt;h4&gt; tag.
 		<strong>Here it is bold.</strong>
 		<em>Here it is italic.
 			<strong>Here it is with both</strong>.</em>
-		<a href="#">Here is a link</a>
+		<a href="/">Here is a link</a>
 		<br>
 		Here's another line to test line height.
 	</h4>
 	<p>This line shows the margin between the previous heading and the next paragraph.</p>
-	
+
 	<h5>This is an &lt;h5&gt; tag.
 		<strong>Here it is bold.</strong>
 		<em>Here it is italic.
 			<strong>Here it is with both</strong>.</em>
-		<a href="#">Here is a link</a>
+		<a href="/">Here is a link</a>
 		<br>
 		Here's another line to test line height.
 	</h5>
 	<p>This line shows the margin between the previous heading and the next paragraph.</p>
-	
+
 	<h6>This is an &lt;h6&gt; tag.
 		<strong>Here it is bold.</strong>
 		<em>Here it is italic.
 			<strong>Here it is with both</strong>.</em>
-		<a href="#">Here is a link</a>
+		<a href="/">Here is a link</a>
 		<br>
 		Here's another line to test line height.
 	</h6>
 	<p>This line shows the margin between the previous heading and the next paragraph.</p>
-	
+
 </div>
 <!-- Headings -->
 
@@ -86,7 +86,7 @@ export default `
 				<strong>Here it is with both.</strong>
 			</em>
 		</em>
-		<a href="#">Here is a link.</a>
+		<a href="/">Here is a link.</a>
 	</p>
 	<p>
 		<strong>This content is left justified</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</p>
@@ -106,12 +106,12 @@ export default `
 	<img src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=Image%20(750x300)%0A&amp;w=750&amp;h=300" alt="Image example">
 
 	<img src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=Large%20Image%20(1200x600)%0A&amp;w=1200&amp;h=600" alt="Wide Image example">
-	
+
 	<figure>
 		<img src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=Figure%20With%20Caption%20(750x300)%0A&amp;w=750&amp;h=300" alt="Figure with caption example">
 		<figcaption class="wp-caption-text">This is the caption text</figcaption>
 	</figure>
-	
+
 </div>
 <!-- Images -->
 
@@ -178,7 +178,7 @@ export default `
 			<dt>Startup</dt>
 			<dd>A startup company or startup is a company or temporary organization designed to search for a repeatable and scalable business model.
 			</dd>
-			<dt>#dowork</dt>
+			<dt>dowork</dt>
 			<dd>Coined by Rob Dyrdek and his personal body guard Christopher “Big Black” Boykins, “Do Work” works as a self motivator, to motivating your friends.</dd>
 			<dt>Do It Live</dt>
 			<dd>I’ll let Bill O’Reilly
@@ -252,118 +252,172 @@ export default `
 <div>
 	<hr>
 	<h2 style="text-align: center;">
-		<strong>Forms: &lt;form&gt;, &lt;label&gt;, &lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;, &lt;textarea&gt;</strong>
+		<strong>Forms: &lt;form&gt;, &lt;label&gt;, &lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;, &lt;fieldset&gt;, &lt;legend&gt;</strong>
 	</h2>
-	<p><strong>NOTE:</strong> These form fields are placed WITHIN wrapping labels. Some implementations keep the labels and inputs separate. This may affect your styles.</p>
 	<hr>
 
-	<form>
-		<label>Input (type="button")
-			<input type="button" value="Button">
-		</label>
-		<label>
-			<input type="checkbox" name="checkbox">
-			Input (type="checkbox") 1
-		</label>
-		<label>
-			<input type="checkbox" name="checkbox">
-			Input (type="checkbox") 2
-		</label>
-		<label>
-			<input type="checkbox" name="checkbox">
-			Input (type="checkbox") 3
-		</label>
-		<label>Input (type="color")
+  <form>
+    <label>Label</label>
+    <br>
+<br>
+    <span>Input (type="button")</span>
+    <br>
+    <input type="button" value="Button">
+    <br>
+<br>
+    <span>Input (type="checkbox")</span>
+    <br>
+    <label>
+      <input type="checkbox" name="checkbox">
+      Checkbox 1
+    </label>
+    <label>
+      <input type="checkbox" name="checkbox">
+      Checkbox 2
+    </label>
+    <label>
+      <input type="checkbox" name="checkbox">
+      Checkbox 3
+    </label>
+    <br>
+<br>
+    <span>Input (type="color")</span>
+    <br>
 			<input type="color">
-		</label>
-		<label>Input (type="date")
+      <br>
+<br>
+    <span>Input (type="date")</span>
+    <br>
 			<input type="date">
-		</label>
-		<label>Input (type="datetime-local")
+      <br>
+<br>
+    <span>Input (type="datetime-local")</span>
+    <br>
 			<input type="datetime-local">
-		</label>
-		<label>Input (type="email")
+      <br>
+<br>
+    <span>Input (type="email")</span>
+    <br>
 			<input type="email">
-		</label>
-		<label>Input (type="file")
+      <br>
+<br>
+    <span>Input (type="file")</span>
+    <br>
 			<input type="file">
-		</label>
-		<label>Input (type="hidden")
+      <br>
+<br>
+    <span>Input (type="hidden")</span>
+    <br>
 			<input type="hidden">
-		</label>
-		<label>Input (type="image")
-			<input type="image">
-		</label>
-		<label>Input (type="month")
+      <br>
+<br>
+    <span>Input (type="image")</span>
+    <br>
+		<br>	<input type="image">
+    <span>Input (type="month")</span>
+    <br>
 			<input type="month">
-		</label>
-		<label>Input (type="number")
+      <br>
+<br>
+    <span>Input (type="number")</span>
+    <br>
 			<input type="number">
-		</label>
-		<label>Input (type="password")
-			<input type="password">
-		</label>
-		<label>
-			<input type="radio" name="radio">
-			Input (type="radio") 1
-		</label>
-		<label>
-			<input type="radio" name="radio">
-			Input (type="radio") 2
-		</label>
-		<label>
-			<input type="radio" name="radio">
-			Input (type="radio") 3
-		</label>
-		<label>Input (type="range")
+      <br>
+<br>
+    <span>Input (type="password")</span>
+    <br>
+      <input type="password">
+      <br>
+
+<br>
+    <span>Input (type="checkbox")</span>
+    <br>
+    <label>
+      <input type="radio" name="radio">
+      Radio 1
+    </label>
+    <label>
+      <input type="radio" name="radio">
+      Radio 2
+    </label>
+    <label>
+      <input type="radio" name="radio">
+      Radio 3
+    </label>
+    <br>
+<br>
+    <span>Input (type="range")</span>
+    <br>
 			<input type="range">
-		</label>
-		<label>Input (type="reset")
+      <br>
+<br>
+    <span>Input (type="reset")</span>
+    <br>
 			<input type="reset">
-		</label>
-		<label>Input (type="search")
+      <br>
+<br>
+    <span>Input (type="search")</span>
+    <br>
 			<input type="search">
-		</label>
-		<label>Input (type="submit")
+      <br>
+<br>
+    <span>Input (type="submit")</span>
+    <br>
 			<input type="submit">
-		</label>
-		<label>Input (type="tel")
+      <br>
+<br>
+    <span>Input (type="tel")</span>
+    <br>
 			<input type="tel">
-		</label>
-		<label>Input (type="text")
+      <br>
+<br>
+    <span>Input (type="text")</span>
+    <br>
 			<input type="text">
-		</label>
-		<label>Input (type="time")
+      <br>
+<br>
+    <span>Input (type="time")</span>
+    <br>
 			<input type="time">
-		</label>
-		<label>Input (type="url")
+      <br>
+<br>
+    <span>Input (type="url")</span>
+    <br>
 			<input type="url">
-		</label>
-		<label>Input (type="week")
-			<input type="week">
-		</label>
-		<label>Disabled Input
+      <br>
+<br>
+    <span>Input (type="week")</span>
+    <br>
+      <input type="week">
+<br>
+    <span>Disabled Input</span>
+    <br>
 			<input type="text" disabled>
-		</label>
-		<label>Select
-			<select>
-				<option value="1">Option 1</option>
-				<option value="2" disabled>Option 2 (disabled)</option>
-				<option value="3">Option 3</option>
-			</select>
-		</label>
-		<label>Textarea
-			<textarea></textarea>
-		</label>
+      <br>
+<br>
+    <span>Select</span>
+    <br>
+    <select>
+      <option value="1">Option 1</option>
+      <option value="2" disabled>Option 2 (disabled)</option>
+      <option value="3">Option 3</option>
+    </select>
+    <br>
+<br>
+    <span>Textarea</span>
+    <br>
+    <textarea></textarea>
+    <br>
+
 		<fieldset>
-    <legend>Fieldset with Legend:</legend>
-		<label>Name:
-			<input type="text">
-		</label>
-		<label>Email:
-			<input type="email">
-		</label>
-  </fieldset>
+      <legend>Fieldset with Legend:</legend>
+      <label>Name:
+        <input type="text">
+      </label>
+      <label>Email:
+        <input type="email">
+      </label>
+    </fieldset>
 	</form>
 </div>
 <!-- Forms -->
@@ -395,10 +449,17 @@ export default `
 		<cite>Automattic</cite>
 	</p>
 	<p>
-		<strong>Code Tag: &lt;code&gt;</strong>
+		<strong>Pre Tag: &lt;pre&gt;</strong>
 	</p>
-	<p>This is great for developers to display test that is intended for code such as
-		<code>word-wrap: break-word;</code>.</p>
+	<p>
+    <pre>{
+  "json": "example"
+}</pre>
+  </p>
+  <p>
+    <strong>Code Tag: &lt;code&gt;</strong>
+  </p>
+  <p>Example text that looks like code: <code>word-wrap: break-word;</code>.</p>
 	<p>
 		<strong>Strike or Delete Tag: &lt;strike&gt;, &lt;del&gt;</strong>
 	</p>
