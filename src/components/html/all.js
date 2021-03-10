@@ -103,12 +103,12 @@ export default `
 		<strong>Images: &lt;img&gt;, &lt;figure&gt;, &lt;figcaption&gt; </strong>
 	</h2>
 	<hr>
-	<img src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=Image%20(750x300)%0A&amp;w=750&amp;h=300" alt="Image example">
+  <img src="https://via.placeholder.com/750x300.svg?text=Image+(750x300)" alt="Image example">
 
-	<img src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=Large%20Image%20(1200x600)%0A&amp;w=1200&amp;h=600" alt="Wide Image example">
+	<img src="https://via.placeholder.com/1200x600.svg?text=Large+Image+(1200x600)" alt="Wide Image example">
 
 	<figure>
-		<img src="https://placeholdit.imgix.net/~text?txtsize=33&amp;txt=Figure%20With%20Caption%20(750x300)%0A&amp;w=750&amp;h=300" alt="Figure with caption example">
+		<img src="https://via.placeholder.com/750x300.svg?text=Figure+With+Caption+(750x300)" alt="Figure with caption example">
 		<figcaption class="wp-caption-text">This is the caption text</figcaption>
 	</figure>
 
