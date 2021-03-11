@@ -94,7 +94,6 @@ export default `
   <p style="text-align: center;">
     <strong>This content is centered</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</p>
 
-  <p><a href="/" disabled="true">This is a disabled link</a></p>
   <p><button>This is a disabled button</button></p>
   <p><button disabled>This is a disabled button</button></p>
 </div>
@@ -263,6 +262,32 @@ export default `
     <label>Label</label>
     <br>
     <br>
+    
+    <span>Input (Don't forget to test focus state)</span>
+    <br>
+    <input>
+    <br>
+    <br>
+    <span>Input (disabled)</span>
+    <br>
+    <input disabled>
+    <br>
+    <br>
+    <span>Input (valid)</span>
+    <br>
+    <input required value="I have a value">
+    <br>
+    <br>
+    <span>Input (invalid)</span>
+    <br>
+    <input required>
+    <br>
+    <br>
+    <span>Input (readonly)</span>
+    <br>
+    <input readonly>
+    <br>
+    <br>    
     <span>Input (type="button")</span>
     <br>
     <input type="button" value="Button">
@@ -394,11 +419,6 @@ export default `
     <span>Input (type="week")</span>
     <br>
     <input type="week">
-    <br>
-    <br>
-    <span>Disabled Input</span>
-    <br>
-    <input type="text" disabled="">
     <br>
     <br>
     <span>Select</span>
