@@ -1,5 +1,6 @@
 export default `
 <div>
+
   <h2 style="text-align: center;">
     <strong>Headers: &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;</strong>
   </h2>
@@ -94,6 +95,9 @@ export default `
   <p style="text-align: center;">
     <strong>This content is centered</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</p>
 
+  <div style="border: 1px solid; max-width: 300px;">
+    <p>ThisIsAVeryLongWordThatIsLongerThanItsAvailableWidth</p>
+  </div>
   <p><button>This is a disabled button</button></p>
   <p><button disabled>This is a disabled button</button></p>
 </div>
@@ -262,7 +266,7 @@ export default `
     <label>Label</label>
     <br>
     <br>
-    
+
     <span>Input (Don't forget to test focus state)</span>
     <br>
     <input>
