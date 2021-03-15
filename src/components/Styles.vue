@@ -41,14 +41,11 @@
 </template>
 
 <script>
-// <script lang="ts">
-import Vue from "vue";
 import { mapActions } from "vuex";
-import axios from "axios";
 // TODO: Look into https://codemirror.net/
 // TODO: Add TypeScript functionality
 
-export default Vue.extend({
+export default {
   data() {
     return {
       newStyle: {
@@ -83,7 +80,6 @@ export default Vue.extend({
         // TODO: You need a URL!!!
         alert("Please add a URL");
         throw Error("Missing URL");
-        return;
       }
 
       // TODO: make sure file exists
@@ -98,10 +94,6 @@ export default Vue.extend({
         return;
       }
 
-      const vm = this;
-      const newStyle = {
-        fileName: selectedFile.name
-      };
       // fileSize: selectedFile.size
 
       // https://developer.mozilla.org/en-US/docs/Web/API/FileReader
@@ -113,22 +105,20 @@ export default Vue.extend({
       // https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
 
       const reader = new FileReader();
-      reader.onload = function() {
+      reader.onload = () => {
         // When the reader fires, we do stuff here.
         var fileContents = reader.result;
 
         if (fileContents) {
-          Vue.set(vm.newStyle, "fileName", selectedFile.name);
-          Vue.set(vm.newStyle, "contents", fileContents);
-          // vm.newStyle.fileName = ;
-          // vm.newStyle.contents = fileContents;
+          this.newStyle.fileName = selectedFile.name
+          this.newStyle.contents = fileContents
         }
       };
       // Fire the reader.
       reader.readAsText(selectedFile);
     },
 
-    async submitForm(event) {
+    async submitForm() {
       // console.dir(event.target);
       let newStyle;
 
@@ -150,7 +140,7 @@ export default Vue.extend({
       }
     }
   }
-});
+}
 </script>
 
 <style>

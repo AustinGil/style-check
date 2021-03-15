@@ -11,12 +11,10 @@
 </template>
 
 <script>
-// <script lang="ts">
-import Vue from "vue";
 import { mapState } from "vuex";
 import { mapActions } from "vuex";
 
-export default Vue.extend({
+export default {
   computed: {
     ...mapState(["styles"])
   },
@@ -27,7 +25,7 @@ export default Vue.extend({
       this.removeStyle(index);
     }
   }
-});
+}
 </script>
 
 <style>

@@ -26,6 +26,8 @@ export default {
         }
       })
 
+      console.log(stylesheets, inlineStyles, html)
+
       return (
         "data:text/html;charset=utf-8," +
         encodeURI(
