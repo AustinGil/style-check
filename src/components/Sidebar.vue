@@ -7,7 +7,7 @@
 
 		<div class="credits">
 			<p>&lt;/&gt; with 👓 by
-				<a href="https://stegosource.com">Stegosource</a>
+				<a href="https://austingil.com">Austin Gil</a>
 			</p>
 		</div>
 	</div>
