@@ -138,16 +138,16 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 .sidebar {
   display: flex;
   flex-direction: column;
   max-width: 250px;
   padding: 10px;
   word-wrap: break-word;
+}
 
-  a {
-    color: #fff;
-  }
+.sidebar a {
+	color: #fff;
 }
 </style>

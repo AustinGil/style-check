@@ -12,7 +12,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 button,
 input:not([type="file"]),
 select,
