@@ -74,11 +74,11 @@ export default {
 		libs: () => [
 			{
 				name: 'Bedrocss',
-				url: 'https://unpkg.com/bedrocss@0.0.1/bedrocss.min.css'
+				url: 'https://unpkg.com/bedrocss/bedrocss.min.css'
 			},
 			{
 				name: 'Bootstrap',
-				url: 'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css'
+				url: 'https://unpkg.com/bootstrap/dist/css/bootstrap.min.css'
 			},
 			{
 				name: "Eric Meyer's CSS Reset",

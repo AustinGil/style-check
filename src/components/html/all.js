@@ -1,13 +1,13 @@
 export default `
-<section>
+	<section>
 		<h2 style="text-align: center;">
-			<strong>Text: &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, &lt;p&gt;</strong>
+			<b>Text: &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, &lt;p&gt;</b>
 		</h2>
 		<hr>
 		<h1>This is an &lt;h1&gt; tag.
-			<strong>Here it is bold.</strong>
+			<b>Here it is bold.</b>
 			<em>Here it is italic.
-				<strong>Here it is with both. </strong>
+				<b>Here it is with both. </b>
 			</em>
 			<a href="/">Here is a link.</a>
 			<br>
@@ -16,9 +16,9 @@ export default `
 		<p>This line shows the margin between the previous heading and the next paragraph.</p>
 
 		<h2>This is an &lt;h2&gt; tag.
-			<strong>Here it is bold.</strong>
+			<b>Here it is bold.</b>
 			<em>Here it is italic.
-				<strong>Here it is with both. </strong>
+				<b>Here it is with both. </b>
 			</em>
 			<a href="/">Here is a link</a>
 			<br>
@@ -27,12 +27,12 @@ export default `
 		<p>This line shows the margin between the previous heading and the next paragraph.</p>
 
 		<h3>This is an &lt;h3&gt; tag.
-			<strong>Here it is bold.</strong>
+			<b>Here it is bold.</b>
 			<em>Here it is italic.
-				<strong>Here it is with</strong>
+				<b>Here it is with</b>
 			</em>
-			<strong>
-				<em> both</em>.</strong>
+			<b>
+				<em> both</em>.</b>
 			<a href="/">Here is a link</a>
 			<br>
 			Here's another line to test line height.
@@ -40,9 +40,9 @@ export default `
 		<p>This line shows the margin between the previous heading and the next paragraph.</p>
 
 		<h4>This is an &lt;h4&gt; tag.
-			<strong>Here it is bold.</strong>
+			<b>Here it is bold.</b>
 			<em>Here it is italic.
-				<strong>Here it is with both</strong>.</em>
+				<b>Here it is with both</b>.</em>
 			<a href="/">Here is a link</a>
 			<br>
 			Here's another line to test line height.
@@ -50,9 +50,9 @@ export default `
 		<p>This line shows the margin between the previous heading and the next paragraph.</p>
 
 		<h5>This is an &lt;h5&gt; tag.
-			<strong>Here it is bold.</strong>
+			<b>Here it is bold.</b>
 			<em>Here it is italic.
-				<strong>Here it is with both</strong>.</em>
+				<b>Here it is with both</b>.</em>
 			<a href="/">Here is a link</a>
 			<br>
 			Here's another line to test line height.
@@ -60,9 +60,9 @@ export default `
 		<p>This line shows the margin between the previous heading and the next paragraph.</p>
 
 		<h6>This is an &lt;h6&gt; tag.
-			<strong>Here it is bold.</strong>
+			<b>Here it is bold.</b>
 			<em>Here it is italic.
-				<strong>Here it is with both</strong>.</em>
+				<b>Here it is with both</b>.</em>
 			<a href="/">Here is a link</a>
 			<br>
 			Here's another line to test line height.
@@ -70,37 +70,37 @@ export default `
 		<p>This line shows the margin between the previous heading and the next paragraph.</p>
 
 		<p style="text-align: left;">This is the standard &lt;p&gt; tag.
-			<strong>Here it is bold.</strong>
+			<b>Here it is bold.</b>
 			<em>Here it is italic.
 				<em>
-					<strong>Here it is with both.</strong>
+					<b>Here it is with both.</b>
 				</em>
 			</em>
 			<a href="/">Here is a link.</a>
 		</p>
 		<p>
-			<strong>This content is left aligned</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+			<b>This content is left aligned</b>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
 			commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
 			ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis
 			enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
 			venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
 			</p>
 		<p style="text-align: right;">
-			<strong>This content is right aligned</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+			<b>This content is right aligned</b>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
 			commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
 			ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis
 			enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
 			venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
 			</p>
 		<p style="text-align: center;">
-			<strong>This content is centered</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+			<b>This content is centered</b>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
 			commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
 			ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis
 			enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
 			venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
 			</p>
 			<p style="text-align: justify;">
-				<strong>This content is justified</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+				<b>This content is justified</b>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
 				commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
 				ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis
 				enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
@@ -112,48 +112,50 @@ export default `
 	<section>
 		<hr>
 		<h2 style="text-align: center;">
-			<strong>Media: &lt;img&gt;, &lt;figure&gt;, &lt;figcaption&gt;, &lt;svg&gt;, &lt;iframe&gt; </strong>
+			<b>Media: &lt;img&gt;, &lt;figure&gt;, &lt;figcaption&gt;, &lt;svg&gt;, &lt;iframe&gt; </b>
 		</h2>
-		<hr>
+		<p><b>Image 750x300: &lt;img&gt;</b></p>
 		<img src="https://via.placeholder.com/750x300.svg?text=Image+(750x300)" alt="Image example">
 
-		<img src="https://via.placeholder.com/1200x600.svg?text=Large+Image+(1200x600)" alt="Wide Image example">
+		<p><b>Wide Image 2000x600: &lt;img&gt;</b></p>
+		<img src="https://via.placeholder.com/2000x600.svg?text=Large+Image+(2000x600)" alt="Wide Image example">
 
+		<p><b>Figure with caption 750x300: &lt;figure&gt;, &lt;caption&gt;</b></p>
 		<figure>
 			<img src="https://via.placeholder.com/750x300.svg?text=Figure+With+Caption+(750x300)" alt="Figure with caption example">
 			<figcaption class="wp-caption-text">This is the caption text</figcaption>
 		</figure>
 
-		<p>SVG 400x200</p>
+		<p><b>SVG 400x200: &lt;svg&gt;</b></p>
 		<svg width="400" height="200">
 			<ellipse cx="50%" cy="70%" rx="50%" ry="25%" fill="indigo" />
 			<ellipse cx="50%" cy="50%" rx="50%" ry="25%" fill="purple" />
 			<ellipse cx="50%" cy="25%" rx="50%" ry="25%" fill="lavender" />
 		</svg>
-		<p>SVG 1200x600</p>
-		<svg width="1200" height="600">
+
+		<p><b>SVG 2000x600: &lt;svg&gt;</b></p>
+		<svg width="2000" height="600">
 			<ellipse cx="50%" cy="70%" rx="50%" ry="25%" fill="indigo" />
 			<ellipse cx="50%" cy="50%" rx="50%" ry="25%" fill="purple" />
 			<ellipse cx="50%" cy="25%" rx="50%" ry="25%" fill="lavender" />
 		</svg>
-		<p>SVG viewbox</p>
+
+		<p><b>SVG 400x200 (viewbox): &lt;svg&gt;</b></p>
 		<svg viewbox="0 0 400 200">
 			<ellipse cx="50%" cy="70%" rx="50%" ry="25%" fill="indigo" />
 			<ellipse cx="50%" cy="50%" rx="50%" ry="25%" fill="purple" />
 			<ellipse cx="50%" cy="25%" rx="50%" ry="25%" fill="lavender" />
 		</svg>
 		
+		<p><b>Video: &lt;video&gt;</b></p>
+		<video controls>
+			<source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/mp4">
+		</video>
+		<p><b>Audio: &lt;audio&gt;</b></p>
+		<audio controls src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>
 
-		<!-- <video controls>
-													<source src="/media/cc0-videos/flower.mp4" type="video/mp4">
-												</video>
-												<br>
-												<audio controls src="/media/cc0-audio/t-rex-roar.mp3"></audio> -->
-
-		<p>
-			<strong>iframe: &lt;iframe&gt;</strong>
-		</p>
-		<iframe src="http://example.com"></iframe>
+		<p><b>iframe: &lt;iframe&gt;</b></p>
+		<iframe src="https://example.com"></iframe>
 
 	</section>
 	<!-- Media -->
@@ -161,11 +163,11 @@ export default `
 	<section>
 		<hr>
 		<h2 style="text-align: center;">
-			<strong>Data: &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, &lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;, &lt;table&gt;, &lt;th&gt;,
-				&lt;tr&gt;, &lt;td&gt;</strong>
+			<b>Data: &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, &lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;, &lt;table&gt;, &lt;th&gt;,
+				&lt;tr&gt;, &lt;td&gt;</b>
 		</h2>
 		<hr>
-		<p>Unordered List: &lt;ul&gt;</p>
+		<p><b>Unordered List: &lt;ul&gt;</b></p>
 		<ul>
 			<li>List item one
 				<ul>
@@ -187,7 +189,7 @@ export default `
 			<li>List item four</li>
 		</ul>
 
-		<p>Ordered List: &lt;ol&gt;</p>
+		<p><b>Ordered List: &lt;ol&gt;</b></p>
 		<ol>
 			<li>List item one
 				<ol>
@@ -209,7 +211,7 @@ export default `
 			<li>List item four</li>
 		</ol>
 
-		<p>Definition List: &lt;dl&gt;</p>
+		<p><b>Definition List: &lt;dl&gt;</b></p>
 		<dl>
 			<dd>Definition list division.</dd>
 			<dt>Startup</dt>
@@ -226,7 +228,7 @@ export default `
 				</dd>
 		</dl>
 
-		<p>Tables: &lt;table&gt;</p>
+		<p><b>Tables: &lt;table&gt;</b></p>
 		<table>
 			<tbody>
 				<tr>
@@ -269,9 +271,9 @@ export default `
 	<section>
 		<hr>
 		<h2 style="text-align: center;">
-			<strong>Interactive: &lt;button&gt;, &lt;form&gt;, &lt;label&gt;, &lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;,
+			<b>Interactive: &lt;button&gt;, &lt;form&gt;, &lt;label&gt;, &lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;,
 				&lt;fieldset&gt;,
-				&lt;legend&gt;</strong>
+				&lt;legend&gt;</b>
 		</h2>
 		<hr>
 
@@ -470,20 +472,21 @@ export default `
 	<section>
 		<hr>
 		<h2 style="text-align: center;">
-			<strong>Miscellaneous Content</strong>
+			<b>Miscellaneous Content</b>
 		</h2>
 		<hr>
+		<p><b>Text Overflow</b></p>
 		<div style="border: 1px solid; max-width: 300px;">
 			<p>ToTestWhiteSpaceWrappingThisIsAVeryLongWordThatIsLongerThanItsAvailableWidth</p>
 		</div>
 
 		<p>
-			<strong>Progress: &lt;progress&gt;</strong>
+			<b>Progress: &lt;progress&gt;</b>
 		</p>
 		<progress max="100" value="60"></progress>
 
 		<p>
-			<strong>Meter: &lt;meter&gt;</strong>
+			<b>Meter: &lt;meter&gt;</b>
 		</p>
 		<p>(default/optimal)</p>
 		<meter value="90" min="0" low="70" high="80" max="100" optimum="90"></meter>
@@ -493,30 +496,30 @@ export default `
 		<meter value="60" min="0" low="70" high="80" max="100" optimum="90"></meter>
 
 		<p>
-			<strong>Details/Summary: &lt;details&gt;, &lt;summary&gt;</strong>
+			<b>Details/Summary: &lt;details&gt;, &lt;summary&gt;</b>
 		</p>
 		<details>
 			<summary>Details</summary>
 			Something small enough to escape casual notice.
 		</details>
 		<p>
-			<strong>Address Tag: &lt;address&gt;</strong>
+			<b>Address: &lt;address&gt;</b>
 		</p>
 		<address>1 Infinite Loop<br> Cupertino, CA 95014<br> United States</address>
 		<p>
-			<strong>Abbreviation Tag: &lt;abbr&gt;</strong>
+			<b>Abbreviation: &lt;abbr&gt;</b>
 		</p>
 		<p>The abbreviation
 			<abbr title="Seriously">srsly</abbr> stands for “seriously”.
 			</p>
 		<p>
-			<strong>Acronym Tag: &lt;acronym&gt;</strong>
+			<b>Acronym: &lt;acronym&gt;</b>
 		</p>
 		<p>The acronym
 			<acronym title="For The Win">ftw</acronym> stands for “for the win”.
 			</p>
 			<p>
-				<strong>Blockquotes: &lt;blockquote&gt;</strong>
+				<b>Blockquotes: &lt;blockquote&gt;</b>
 			</p>
 			<blockquote>
 				<p>This is a single line blockquote.</p>
@@ -530,73 +533,80 @@ export default `
 				</p>
 			</blockquote>
 		<p>
-			<strong>Cite Tag: &lt;cite&gt;</strong>
+			<b>Cite: &lt;cite&gt;</b>
 		</p>
 		<p>“Code is poetry.” –
 			<cite>Automattic</cite>
 		</p>
-		<p>
-			<strong>Pre Tag: &lt;pre&gt;</strong>
-		</p>
+
+		<p><b>Pre: &lt;pre&gt;</b></p>
 		<pre>{
-	"json": "example"
+  "json": "example"
+}</pre>
+
+		<p><b>Pre (spaces, tabs, overflow): &lt;pre&gt;</b></p>
+		<pre style="width: 300px;">{
+  "spaces": "This line uses spaces",
+	"tabs": "This line uses tabs",
+  "longUrl": "https://this-is-a-very-long-word-that-stretches-beyond-the-width-of-its-container.com",
+  "longWord": "thisIsAVeryLongWordThatStretchesBeyondTheWidthOfItsContainer",
 }</pre>
 		<p>
-			<strong>Code Tag: &lt;code&gt;</strong>
+			<b>Code: &lt;code&gt;</b>
 		</p>
 		<p>Example text that looks like code: <code>word-wrap: break-word;</code>.</p>
 		<p>
-			<strong>Strike or Delete Tag: &lt;strike&gt;, &lt;del&gt;</strong>
+			<b>Strike or Delete: &lt;strike&gt;, &lt;del&gt;</b>
 		</p>
 		<p>This tag will let you
 			<del>strikeout text.</del> Note that the &lt;del&gt; tag is no longer supported in HTML5 so use the
 			<code>&lt;strike&gt;</code> instead.
 			</p>
 		<p>
-			<strong>Insert Tag: &lt;ins&gt;</strong>
+			<b>Insert: &lt;ins&gt;</b>
 		</p>
 		<p>This tag should denote
 			<ins>inserted</ins> text.
 			</p>
 		<p>
-			<strong>Keyboard Tag: &lt;kbd&gt;</strong>
+			<b>Keyboard: &lt;kbd&gt;</b>
 		</p>
 		<p>This scarcely known tag emulates
 			<kbd>keyboard text</kbd>, which is usually styled like the
 			<code>&lt;code&gt;</code> tag.
 			</p>
 		<p>
-			<strong>Quote Tag: &lt;q&gt;</strong>
+			<b>Quote: &lt;q&gt;</b>
 		</p>
 		<p>
 			<q>Developers, developers, developers…</q> –Steve Ballmer
 			</p>
 			<p>
-				<strong>Small Tag: &lt;small&gt;</strong>
+				<b>Small: &lt;small&gt;</b>
 			</p>
 			<p>Want to see some small text? <small>Here you go!</small></p>
 		<p>
-			<strong>Subscript Tag: &lt;sub&gt;</strong>
+			<b>Subscript: &lt;sub&gt;</b>
 		</p>
 		<p>Getting our science styling on with H
 			<sub>2</sub>O, which should push the “2″ down.
 			</p>
 		<p>
-			<strong>Superscript Tag: &lt;sup&gt;</strong>
+			<b>Superscript: &lt;sup&gt;</b>
 		</p>
 		<p>Still sticking with science and Albert Einstein’s E=mc
 			<sup>2</sup>, which should lift the 2 up.
 			</p>
 		<p>
-			<strong>Teletype Tag: &lt;tt&gt;</strong>
+			<b>Teletype: &lt;tt&gt;</b>
 		</p>
 		<p>This rarely used tag emulates
 			<tt>teletype text</tt>, which is usually styled like the
 			<code>&lt;code&gt;</code> tag.
 			</p>
 		<p>
-			<strong>Variable Tag: &lt;var&gt;</strong>
+			<b>Variable: &lt;var&gt;</b>
 		</p>
-		<p>This allows you to denote<var>variables</var>.</p>
+		<p>This allows you to denote <var>variables</var>.</p>
 	</section>
 	<!-- Misc -->`
