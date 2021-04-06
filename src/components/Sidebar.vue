@@ -1,6 +1,6 @@
 <template>
 	<div class="sidebar">
-		<h1 class="h3 mb-16">Styles Check</h1>
+		<h1 class="h3 mb-16">Style Check</h1>
 		<p class="mb-16">See how your styles render global HTML elements and make sure nothing gets left behind.</p>
 
 		<form @submit.prevent="submitForm" class="mb-16">
