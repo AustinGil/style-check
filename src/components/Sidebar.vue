@@ -3,18 +3,18 @@
 		<h1 class="h3 mb-16">Styles Check</h1>
 		<p class="mb-16">See how your styles render global HTML elements and make sure nothing gets left behind.</p>
 
-		<form @submit.prevent="addLib" class="mb-16">
+		<form @submit.prevent="submitForm" class="mb-16">
 			<label for="libs">Import Library</label>
 			<div class="flex gap-8">
 				<select name="libs" id="libs">
-					<option value="" disabled selected></option>
+					<option value=""></option>
 					<option v-for="lib in libs" :key="lib.name" :value="lib.url">{{ lib.name }}</option>
 				</select>
 				<button aria-label="submit">+</button>
 			</div>
 		</form>
 
-		<form @submit.prevent="addUrl" class="mb-16">
+		<form @submit.prevent="submitForm" class="mb-16">
 			<label for="url">Import URL</label>
 			<div class="flex gap-8">
 				<input name="url" id="url" type="url" />
@@ -22,7 +22,7 @@
 			</div>
 		</form>
 
-		<form @submit.prevent="addFile" class="mb-16">
+		<form @submit.prevent="submitForm" class="mb-16">
 			<label for="file">Import File</label>
 			<div class="flex gap-8 align-center">
 				<input name="file" id="file" type="file" />
@@ -39,7 +39,7 @@
 			<li v-for="(style, index) in activeStyles" :key="index" class="styles__style flex gap-8 align-center justify-between">
 				<a :href="style.url" target="_blank" rel="noopener">{{ style.name }}</a>
 
-				<button aria-label="remove style" class="styles__remove-style" @click="deleteStyle(index)">X</button>
+				<button aria-label="remove style" class="styles__remove-style" @click="deleteStyle(index)">&times;</button>
 
 				<!-- TODO: Add ability to reorder styles -->
 			</li>
@@ -90,42 +90,51 @@ export default {
 			}
 		]
 	},
+	mounted() {
+		let urls = this.$route.query.url
+		if (!urls) return
+
+		urls = Array.isArray(urls) ? urls : [urls]
+		for (const url of urls) {
+			const lib = this.libs.find(lib => lib.url === url)
+			if (lib) {
+				this.$store.commit('addStyle', lib)
+			} else {
+				this.$store.commit('addStyle', { url: url })
+			}
+		}
+	},
+  watch: {
+    '$store.state.styles.length': function() {
+      const urls = []
+      for (const { url } of this.$store.state.styles) {
+        if (url) urls.push(url)
+      }
+			this.$router.push({ query: { url: urls} })
+    }
+  },
   methods: {
-		addLib(event) {
+		async submitForm(event) {
 			const form = event.target
 			const data = new FormData(form)
-			const selectedUrl = data.get('libs')
-			const selectedLib = this.libs.find(lib => lib.url === selectedUrl)
-			if(!selectedLib) return
-			this.$store.commit('addStyle', selectedLib)
-			form.reset()
-		},
-
-		addUrl(event) {
-			const form = event.target
-			const data = new FormData(form)
+			
+			const selectedLibUrl = data.get('libs')
+			const lib = this.libs.find(lib => lib.url === selectedLibUrl)
 			const url = data.get('url')
-			if (!url) return
-			this.$store.commit('addStyle', { url: url })
-			form.reset()
-		},
-
-    addFile(event) {
-			const form = event.target
-			const data = new FormData(form)
 			const file = data.get('file')
 
-      if (!file) return
-
-      const reader = new FileReader();
-      reader.onload = () => {
-        const fileContents = reader.result;
-				if(!fileContents) return
-
-				this.$store.commit('addStyle', { name: file.name, styles: fileContents })
-      };
-      reader.readAsText(file);
-    },
+			let style = {}
+			if (lib) {
+				style = lib
+			} else if (url) {
+				style.url = url
+			} else if (file) {
+				style.name = file.name
+				style.styles = await file.text()
+			}
+			this.$store.commit('addStyle', style)
+			form.reset()
+		},
 
 		addInline(event) {
 			this.$store.commit('setInline', event.target.value)
