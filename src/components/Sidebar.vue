@@ -30,7 +30,7 @@
 			</div>
 		</form>
 
-		<div>
+		<div class="mb-16">
 			<label for="inline">Inline Styles</label>
 			<textarea name="inline" id="inline" @input="addInline"></textarea>
 		</div>
