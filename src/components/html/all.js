@@ -114,6 +114,7 @@ export default `
 		<h2 style="text-align: center;">
 			<b>Media: &lt;img&gt;, &lt;figure&gt;, &lt;figcaption&gt;, &lt;svg&gt;, &lt;iframe&gt; </b>
 		</h2>
+		<hr>
 		<p><b>Image 750x300: &lt;img&gt;</b></p>
 		<img src="https://via.placeholder.com/750x300.svg?text=Image+(750x300)" alt="Image example">
 
@@ -125,6 +126,11 @@ export default `
 			<img src="https://via.placeholder.com/750x300.svg?text=Figure+With+Caption+(750x300)" alt="Figure with caption example">
 			<figcaption class="wp-caption-text">This is the caption text</figcaption>
 		</figure>
+
+		<p><b>Picture 750x300: &lt;picture&gt;</b></p>
+		<picture>
+			<img src="https://via.placeholder.com/750x300.svg?text=Image+(750x300)" alt="Image example">
+		</picture>
 
 		<p><b>SVG 400x200: &lt;svg&gt;</b></p>
 		<svg width="400" height="200">
