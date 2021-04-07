@@ -17,8 +17,7 @@ button,
 input:not([type="file"]),
 select,
 textarea {
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: .25rem;
 }
 
 .flex {
