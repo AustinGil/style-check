@@ -1,7 +1,7 @@
 <template>
-	<div class="sidebar">
+	<div class="sidebar p-8">
 		<h1 class="h3 mb-16">Style Check</h1>
-		<p class="mb-16">See how your styles render global HTML elements and make sure nothing gets left behind.</p>
+		<p class="mb-16">Style check helps developers audit the effect of different CSS sources on plain HTML elements.</p>
 
 		<form @submit.prevent="submitForm" class="mb-16">
 			<label for="libs">Import Library</label>
@@ -30,20 +30,23 @@
 			</div>
 		</form>
 
+		<template v-if="activeStyles.length">
+			<p>Active Sources</p>
+			<ul class="mb-16">
+				<li v-for="(style, index) in activeStyles" :key="index" class="styles__style flex gap-8 align-center justify-between">
+					<a :href="style.url" target="_blank" rel="noopener">{{ style.name }}</a>
+	
+					<button aria-label="remove style" class="styles__remove-style" @click="deleteStyle(index)">&times;</button>
+	
+					<!-- TODO: Add ability to reorder styles -->
+				</li>
+			</ul>
+		</template>
+
 		<div class="mb-16">
 			<label for="inline">Inline Styles</label>
 			<textarea name="inline" id="inline" @input="addInline"></textarea>
 		</div>
-
-		<ul class="mb-16">
-			<li v-for="(style, index) in activeStyles" :key="index" class="styles__style flex gap-8 align-center justify-between">
-				<a :href="style.url" target="_blank" rel="noopener">{{ style.name }}</a>
-
-				<button aria-label="remove style" class="styles__remove-style" @click="deleteStyle(index)">&times;</button>
-
-				<!-- TODO: Add ability to reorder styles -->
-			</li>
-		</ul>
 
 		<div class="credits">
 			<p>&lt;/&gt; with 👓 by
@@ -149,10 +152,7 @@ export default {
 
 <style>
 .sidebar {
-  display: flex;
-  flex-direction: column;
   max-width: 250px;
-  padding: 10px;
   word-wrap: break-word;
 }
 

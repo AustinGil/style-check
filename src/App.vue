@@ -40,6 +40,10 @@ textarea {
   margin-bottom: 1rem;
 }
 
+.p-8 {
+  padding: .5rem;
+}
+
 #app,
 .main {
   display: flex;
