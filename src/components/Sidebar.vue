@@ -126,7 +126,7 @@ export default {
 			const url = data.get('url')
 			const file = data.get('file')
 
-			if(!lib || !url || !file) return
+			if(!lib && !url && !file) return
 
 			let style = {}
 			if (lib) {
