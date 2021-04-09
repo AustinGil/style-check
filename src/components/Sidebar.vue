@@ -6,7 +6,7 @@
 		<form @submit.prevent="submitForm" class="mb-16">
 			<label for="libs">Import Library</label>
 			<div class="flex gap-8">
-				<select name="libs" id="libs">
+				<select name="libs" id="libs" required>
 					<option value=""></option>
 					<option v-for="lib in libs" :key="lib.name" :value="lib.url">{{ lib.name }}</option>
 				</select>
@@ -17,7 +17,7 @@
 		<form @submit.prevent="submitForm" class="mb-16">
 			<label for="url">Import URL</label>
 			<div class="flex gap-8">
-				<input name="url" id="url" type="url" />
+				<input name="url" id="url" type="url" required />
 				<button aria-label="submit">+</button>
 			</div>
 		</form>
@@ -25,7 +25,7 @@
 		<form @submit.prevent="submitForm" class="mb-16">
 			<label for="file">Import File</label>
 			<div class="flex gap-8 align-center">
-				<input name="file" id="file" type="file" />
+				<input name="file" id="file" type="file" required />
 				<button aria-label="submit">+</button>
 			</div>
 		</form>
@@ -125,6 +125,8 @@ export default {
 			const lib = this.libs.find(lib => lib.url === selectedLibUrl)
 			const url = data.get('url')
 			const file = data.get('file')
+
+			if(!lib || !url || !file) return
 
 			let style = {}
 			if (lib) {
