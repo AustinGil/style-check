@@ -1,9 +1,16 @@
 {
   "name": "styles",
+  "description": "Style check helps developers audit the effect of different CSS sources on plain HTML elements.",
+  "author": {
+    "name": "Austin Gil",
+    "email": "hey@austingil.com",
+    "url": "https://austingil.com"
+  },
+  "homepage": "https://style-check.austingil.com",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
