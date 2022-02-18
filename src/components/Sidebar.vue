@@ -156,6 +156,7 @@ export default {
 .sidebar {
   max-width: 250px;
   word-wrap: break-word;
+  background-color: #0c6980;
 }
 
 .sidebar a {

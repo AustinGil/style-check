@@ -53,7 +53,6 @@ textarea {
 #app {
   min-height: 100vh;
   color: #fff;
-  background-color: #0c6980;
 }
 
 .main {
