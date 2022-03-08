@@ -32,7 +32,8 @@ export default {
         }
       })
 
-      return `data:text/html;charset=utf-8,${encodeURIComponent(`<body>
+      return `data:text/html;charset=utf-8,${encodeURIComponent(`<head><meta name="color-scheme" content="light dark"></head>
+      <body>
         ${stylesheets}
         ${fileContents}
         <style>${this.inline.replace(/\/\*.+\*\//g, '')}</style>
