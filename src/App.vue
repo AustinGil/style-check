@@ -13,10 +13,6 @@ export default {
 </script>
 
 <style>
-:root {
-  color-scheme: light;
-}
-
 button,
 input:not([type="file"]),
 select,
